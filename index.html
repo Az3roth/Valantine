@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Be My Valentine? ❤️</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: pink;
+            padding: 50px;
+        }
+        #question {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .btn {
+            font-size: 18px;
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            cursor: pointer;
+        }
+        #yes {
+            background-color: red;
+            color: white;
+            font-size: 20px;
+        }
+        #no {
+            background-color: white;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="question">Will you be my Valentine? 💖</h1>
+    <button id="yes" class="btn" onclick="yesClicked()">Yes 💕</button>
+    <button id="no" class="btn" onclick="noClicked()">No 😢</button>
+    
+    <script>
+        let yesSize = 20;
+        let questionIndex = 0;
+        const questions = [
+            "1",
+            "Ninte pinnale nadakanalla, oppam nadakananu enikishtam🫠",
+            "Velakaari aayirundhaalum nee enn mohavalli 🙂",
+            "Are you sure? 💔",
+            "Think again, I'm awesome! 😘",
+            "But we’d be perfect together! 😍",
+            "Don’t break my heart! 💞",
+            "Last chance, cutie! 🥺",
+            "Enikku ninne ishtamanu! (I like you!) 💕 - Premam",
+            "Namukk oru samayam koodi kittum alle? (We’ll get another chance, right?) ❤️ - Thattathin Marayathu",
+            "Nee en thoovanathumbikal aanu! (You are my fireflies!) ✨ - Thoovanathumbikal",
+            "Ninte karyam njan kaanum! (I will take care of you!) 😍 - Kumbalangi Nights"
+        ];
+
+        const yesMessages = [
+            "Yay!sett aayiii ❤️🥰",
+            "കുട്ടികളുടെ  കളിപ്പാട്ടമാണ് കാറ്റാടി. പക്ഷെ നിന്റെ ഒരു ഒറ്റ ചിരിയിൽ ഞാൻ ഫ്ലാറ്റാടി. 🍫💕",
+            "മധുരം കുറച്ചൊരു കാപ്പി. പക്ഷെ നീ കൂടെ ഉണ്ടെങ്കിൽ ഞാൻ എന്നും ഹാപ്പി 😍",
+            "ഹേയ്.. ഹേയ്.. ഹേയ്.. പറയ്, ഇത് പ്രേമമല്ലാതെ എന്താ? എനിക്ക് വേറെ ഇല്ല ഒരു ചിന്ത.. ഉള്ളിൽ എന്നും നിന്റെ മോന്ത. 😘",
+            "ഗ്യാലക്സിയിൽ ഉണ്ട് ബ്ലാക്ക്ഹോൾ, സിനിമയിൽ ഉണ്ട് ലൂപ്പ്ഹോൾ, എന്റെ അമ്മയുടെ മൈൻഡിൽ നീയാണ് മരുമോള്. 💖",
+            "കഴിക്കാൻ ബ്രഡ്, കിടക്കാൻ ബെഡ്, നിന്നെ കണ്ടപ്പോൾ ഞാൻ ഡെഡ്💑",
+            "ഫുട്ബാളിൽ ഉണ്ട് കോച്ച്, ബോൾ വന്നാൽ ക്യാച്ച്, നമ്മൾ തമ്മിൽ മാച്ച് 💃🕺",
+            "വണ്ടികൾക്കുണ്ട് ടയർ, നീളത്തിൽ വളരും ഹെയർ, നീയാണെന്റെ ഡിയർ 🏹❤️",
+            "Mone Dinesha! Ithoru correct decision aanu 😂 ",
+            "കുളിക്കുമ്പോൾ തേക്കാൻ ക്യൂട്ടി, പോയാലോ നമുക്കൊന്നു ഊട്ടി, തണുപ്പത് നീയെന്റെ നോട്ടി 💑❤️ ",
+            "Dairy milk is yummy! will you be my children’s mummy? 😆",
+            "Mohanlal said  uyaram koodum thorum chayakk madhuram koodum”. Porunno ente koode munnarilekk",
+            "are you from the lake? because ne oru mothala"
+        ];
+
+        function noClicked() {
+            yesSize += 10;
+            document.getElementById("yes").style.fontSize = yesSize + "px";
+            if (questionIndex < questions.length) {
+                document.getElementById("question").innerText = questions[questionIndex];
+                questionIndex++;
+            } else {
+                document.getElementById("question").innerText = "You have to say YES now! 😆";
+            }
+        }
+
+        function yesClicked() {
+            let randomMessage = yesMessages[Math.floor(Math.random() * yesMessages.length)];
+            document.body.innerHTML = `<h1>${randomMessage}</h1>`;
+        }
+    </script>
+</body>
+</html>
